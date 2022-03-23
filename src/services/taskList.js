@@ -5,6 +5,16 @@ class TaskList {
 		this._tastkList = {};
 	}
 
+	get taskList() {
+		const list = [];
+
+		Object.keys(this._tastkList).forEach((key) =>
+			list.push(this._tastkList[key])
+		);
+
+		return list;
+	}
+
 	addTask(desc = '') {
 		const task = new Task(desc);
 		const now = new Date();
