@@ -23,7 +23,7 @@ const main = async () => {
 				break;
 
 			case 2:
-				console.log(tasks.taskList);
+				tasks.showTasks();
 				break;
 		}
 

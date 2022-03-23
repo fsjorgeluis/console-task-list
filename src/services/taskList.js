@@ -28,6 +28,20 @@ class TaskList {
 			this._tastkList[task.id] = task;
 		});
 	}
+
+	showTasks() {
+		console.log();
+
+		this.taskList.forEach((task, index) => {
+			const taskId = `${index + 1}.`.green;
+
+			console.log(
+				`${taskId} ${task.description} :: ${
+					task.completedAt !== null ? 'Completed'.green : 'Pending'.red
+				}`
+			);
+		});
+	}
 }
 
 module.exports = TaskList;

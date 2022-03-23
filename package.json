@@ -1,7 +1,7 @@
 {
-	"name": "todo-list-yargs",
+	"name": "todo-list",
 	"version": "0.0.1",
-	"description": "just a littel task list console app",
+	"description": "just a littel taskboard console app",
 	"repository": {
 		"url": "https://github.com/fsjorgeluis/console-task-list.git"
 	},
