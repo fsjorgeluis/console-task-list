@@ -22,6 +22,12 @@ class TaskList {
 		task.updatedAt = now;
 		this._tastkList[task.id] = task;
 	}
+
+	getTasks(tasks = []) {
+		tasks.forEach((task) => {
+			this._tastkList[task.id] = task;
+		});
+	}
 }
 
 module.exports = TaskList;

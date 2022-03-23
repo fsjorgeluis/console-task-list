@@ -1,11 +1,17 @@
 require('colors');
 
 const { inquirerMenu, pauseMenu, readInput } = require('./libs/inquirer');
+const { saveData, readData } = require('./libs/manage');
 const TaskList = require('./services/taskList');
 
 const main = async () => {
 	let opt = '';
 	const tasks = new TaskList();
+	const taskJSON = readData();
+
+	if (taskJSON) {
+		tasks.getTasks(taskJSON);
+	}
 
 	do {
 		opt = await inquirerMenu();
@@ -20,6 +26,8 @@ const main = async () => {
 				console.log(tasks.taskList);
 				break;
 		}
+
+		saveData(tasks.taskList);
 
 		if (opt !== 0) await pauseMenu();
 	} while (opt !== 0);
