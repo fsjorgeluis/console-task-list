@@ -1,14 +1,18 @@
 {
 	"name": "todo-list-yargs",
-	"version": ".0.1",
-	"description": "",
+	"version": "0.0.1",
+	"description": "just a littel task list console app",
 	"main": "src/app.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"start": "node src/app.js"
 	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
+	"keywords": [
+		"nodejs",
+		"inquirer",
+		"console"
+	],
+	"author": "Jorge Fernandez",
+	"license": "MIT",
 	"dependencies": {
 		"colors": "^1.4.0",
 		"inquirer": "^8.2.1"
