@@ -25,6 +25,14 @@ const main = async () => {
 			case 2:
 				tasks.showTasks();
 				break;
+
+			case 3:
+				tasks.showTaskByStatus(true);
+				break;
+
+			case 4:
+				tasks.showTaskByStatus(false);
+				break;
 		}
 
 		saveData(tasks.taskList);

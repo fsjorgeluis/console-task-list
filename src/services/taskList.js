@@ -42,6 +42,30 @@ class TaskList {
 			);
 		});
 	}
+
+	showTaskByStatus(completed = true) {
+		console.log();
+
+		let index = 0;
+
+		this.taskList.forEach((task) => {
+			if (completed) {
+				if (task.completedAt !== null) {
+					console.log(
+						`${(index + 1 + '.').green} ${task.description} :: ${
+							'Completed'.green
+						} At ${new Date(task.completedAt).toLocaleString()}`
+					);
+				}
+			} else {
+				if (task.completedAt === null) {
+					console.log(
+						`${index + 1 + '.'.green} ${task.description} :: ${'Pending'.red}`
+					);
+				}
+			}
+		});
+	}
 }
 
 module.exports = TaskList;
