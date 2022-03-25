@@ -1,6 +1,11 @@
 require('colors');
 
-const { inquirerMenu, pauseMenu, readInput } = require('./libs/inquirer');
+const {
+	inquirerMenu,
+	pauseMenu,
+	readInput,
+	removeMenu,
+} = require('./libs/inquirer');
 const { saveData, readData } = require('./libs/manage');
 const TaskList = require('./services/taskList');
 
@@ -32,6 +37,11 @@ const main = async () => {
 
 			case 4:
 				tasks.showTaskByStatus(false);
+				break;
+
+			case 6:
+				const id = await removeMenu(tasks.taskList);
+				console.log({ id });
 				break;
 		}
 

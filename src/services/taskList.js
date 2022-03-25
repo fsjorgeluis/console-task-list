@@ -5,6 +5,12 @@ class TaskList {
 		this._tastkList = {};
 	}
 
+	showTaskToDelete(id = '') {
+		if (this._tastkList[id]) {
+			delete this._tastkList[id];
+		}
+	}
+
 	get taskList() {
 		const list = [];
 
