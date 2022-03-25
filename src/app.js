@@ -5,6 +5,7 @@ const {
 	pauseMenu,
 	readInput,
 	removeMenu,
+	confirmInput,
 } = require('./libs/inquirer');
 const { saveData, readData } = require('./libs/manage');
 const TaskList = require('./services/taskList');
@@ -41,7 +42,13 @@ const main = async () => {
 
 			case 6:
 				const id = await removeMenu(tasks.taskList);
-				console.log({ id });
+				if (id !== 0) {
+					const ok = await confirmInput('Are you sure?');
+					if (ok) {
+						tasks.taskToDelete(id);
+						console.log('Task removed successfully!');
+					}
+				}
 				break;
 		}
 

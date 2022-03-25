@@ -65,6 +65,9 @@ const removeMenu = async (tasks = []) => {
 		};
 	});
 
+	// unshift or push thats the question XD
+	choices.push({ value: 0, name: `${'0.'.green} Back` });
+
 	const questions = [
 		{
 			type: 'list',
@@ -78,9 +81,24 @@ const removeMenu = async (tasks = []) => {
 	return id;
 };
 
+const confirmInput = async (message) => {
+	const questions = [
+		{
+			type: 'confirm',
+			name: 'ok',
+			message,
+		},
+	];
+
+	const { ok } = await inquirer.prompt(questions);
+
+	return ok;
+};
+
 module.exports = {
 	inquirerMenu,
 	pauseMenu,
 	readInput,
 	removeMenu,
+	confirmInput,
 };

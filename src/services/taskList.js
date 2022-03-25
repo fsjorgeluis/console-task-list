@@ -5,7 +5,7 @@ class TaskList {
 		this._tastkList = {};
 	}
 
-	showTaskToDelete(id = '') {
+	taskToDelete(id = '') {
 		if (this._tastkList[id]) {
 			delete this._tastkList[id];
 		}
