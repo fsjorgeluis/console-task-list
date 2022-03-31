@@ -6,6 +6,7 @@ const {
 	readInput,
 	removeMenu,
 	confirmInput,
+	taskCheckList,
 } = require('./libs/inquirer');
 const { saveData, readData } = require('./libs/manage');
 const TaskList = require('./services/taskList');
@@ -38,6 +39,11 @@ const main = async () => {
 
 			case 4:
 				tasks.showTaskByStatus(false);
+				break;
+
+			case 5:
+				const ids = await taskCheckList(tasks.taskList);
+				console.log(ids)
 				break;
 
 			case 6:

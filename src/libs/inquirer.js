@@ -59,6 +59,7 @@ const readInput = async (message) => {
 const removeMenu = async (tasks = []) => {
 	const choices = tasks.map((task, index) => {
 		const taskId = `${index + 1}.`.green;
+
 		return {
 			value: task.id,
 			name: `${taskId} ${task.description}`,
@@ -95,10 +96,36 @@ const confirmInput = async (message) => {
 	return ok;
 };
 
+
+const taskCheckList = async (tasks = []) => {
+	const choices = tasks.map((task, index) => {
+		const taskId = `${index + 1}.`.green;
+
+		return {
+			value: task.id,
+			name: `${taskId} ${task.description}`,
+			checked: (task.completedAt) ? true : false
+		}
+	});
+
+	const questions = [
+		{
+			type: 'checkbox',
+			name: 'ids',
+			message: 'Selecciones',
+			choices
+		}
+	];
+
+	const { ids } = await inquirer.prompt(questions);
+	return ids;
+};
+
 module.exports = {
 	inquirerMenu,
 	pauseMenu,
 	readInput,
 	removeMenu,
 	confirmInput,
+	taskCheckList,
 };
