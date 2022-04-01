@@ -1,6 +1,6 @@
 {
 	"name": "todo-list",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"description": "just a littel taskboard console app",
 	"repository": {
 		"url": "https://github.com/fsjorgeluis/console-task-list.git"
