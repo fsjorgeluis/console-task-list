@@ -23,7 +23,7 @@ class TaskList {
 
 	addTask(desc = '') {
 		const task = new Task(desc);
-		const now = new Date();
+		const now = new Date().toISOString();
 		task.createdAt = now;
 		task.updatedAt = now;
 		this._tastkList[task.id] = task;
@@ -60,7 +60,7 @@ class TaskList {
 					console.log(
 						`${(index + 1 + '.').green} ${task.description} :: ${
 							'Completed'.green
-						} At ${new Date(task.completedAt).toLocaleString()}`
+						} At ${new Date(task.completedAt).toLocaleString().yellow}`
 					);
 				}
 			} else {
@@ -71,6 +71,23 @@ class TaskList {
 				}
 			}
 		});
+	}
+
+	toggleCompleteTasks(ids = []) {
+		ids.forEach(id => {
+			const task = this._tastkList[id];
+
+			if (!task.completedAt) {
+				task.completedAt = new Date().toISOString();
+			}
+		});
+
+		Object.keys(this._tastkList).forEach(key => {
+			
+			if (!ids.includes(key)) {
+				this._tastkList[key].completedAt = null;
+			}
+		})
 	}
 }
 

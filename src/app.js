@@ -43,7 +43,7 @@ const main = async () => {
 
 			case 5:
 				const ids = await taskCheckList(tasks.taskList);
-				console.log(ids)
+				tasks.toggleCompleteTasks(ids);
 				break;
 
 			case 6:
