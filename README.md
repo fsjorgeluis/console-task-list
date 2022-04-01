@@ -2,7 +2,7 @@
 
 Console application using inquirer package.
 
-The console power in the palm of your hand! xD
+The power of the console in the palm of your hand! xD
 
 ```
 =============================
