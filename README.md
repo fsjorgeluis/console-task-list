@@ -1,7 +1,7 @@
 # Console app - TaskBoard
 
-Console application using inquirer.
-The console power in the palm of your hand xD
+Console application using inquirer package.
+The console power in the palm of your hand! xD
 
 ```
 =============================
